@@ -1,5 +1,6 @@
 %{
     #define YYSTYPE double
+    extern YYSTYPE yylval;
     #include <math.h>
     #include <stdio.h>
     int yylex (void);
