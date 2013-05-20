@@ -7,7 +7,7 @@ integer         [0-9]+
 double          {integer}("."{integer})?
 %%
 {blanks}    { /* Ignore */    }
-{double}    { yylval = atof(yytext); return NUM; }                                                       
+{integer}    { yylval = atoi(yytext); return NUM; }                                                       
 "+"         { return yytext[0]; }
 "-"         { return yytext[0]; }
 "*"         { return yytext[0]; }

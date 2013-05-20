@@ -1,5 +1,6 @@
 %{
-    #define YYSTYPE double
+    #define YYSTYPE int
+    extern YYSTYPE yylval;
     #include <math.h>
     #include <stdio.h>
     int yylex (void);
@@ -15,7 +16,7 @@ input:    /* empty */
 ;
      
 line:     '\n'
-    | exp '\n'      { printf ("\t %.10gs \n", $1); }
+    | exp '\n'      { printf ("\t %i \n", $1); }
 ;
      
 exp:      NUM           { $$ = $1;           }
