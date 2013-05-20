@@ -2,9 +2,10 @@
 #include "calc.tab.h"
 #include <stdlib.h>
 %}
+ 
 blanks          [ \t]+
 integer         [0-9]+
-double          {integer}("."{integer})?
+double          {integer}('.'{integer})?
 %%
 {blanks}    { /* Ignore */    }
 {integer}    { yylval = atoi(yytext); return NUM; }                                                       
@@ -17,3 +18,7 @@ double          {integer}("."{integer})?
 "\n"        { return yytext[0]; }
 .           { /* Ignore */  }
 %%
+
+yywrap()
+{
+}

@@ -2,7 +2,7 @@ all: calcp
 	./calcp
 
 calcp: calc.lex.o calc.y.o
-	gcc -g -o calcp calc.lex.o calc.y.o -lfl -lm
+	gcc -g -o calcp calc.lex.o calc.y.o -lm
 
 calc.lex.o: lex.yy.c
 	gcc -g -c lex.yy.c  -o calc.lex.o
